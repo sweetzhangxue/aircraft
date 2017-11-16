@@ -1,6 +1,5 @@
-package com.nuts.sample.ui;
+package com.nuts.sample.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,8 +13,7 @@ import com.nuts.sample.model.OrderInfo;
 
 import java.util.List;
 
-
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
     private final AccountController accountController = Const.ACCOUNT_CONTROLLER;
 
