@@ -11,18 +11,11 @@ public class BaseActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /**
-         * 场景类型设置接口:
-         * etype是官方场景，有如下场景:
 
-         EScenarioType.E_UM_NORMAL 普通统计场景类型
-
-         EScenarioType.E_UM_GAME 游戏场景类型
-         */
-
-        MobclickAgent.setScenarioType(this, EScenarioType.E_UM_NORMAL);
-        MobclickAgent.setSessionContinueMillis(1000);
+        setUmengScenarioType();
     }
+
+
 
     @Override
     protected void onResume() {
@@ -34,5 +27,19 @@ public class BaseActivity extends Activity {
     protected void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+
+    private void setUmengScenarioType() {
+        /**
+         * 场景类型设置接口:
+         * etype是官方场景，有如下场景:
+
+         EScenarioType.E_UM_NORMAL 普通统计场景类型
+
+         EScenarioType.E_UM_GAME 游戏场景类型
+         */
+
+        MobclickAgent.setScenarioType(this, EScenarioType.E_UM_NORMAL);
+        MobclickAgent.setSessionContinueMillis(1000);
     }
 }
