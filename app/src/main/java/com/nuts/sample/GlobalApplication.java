@@ -17,6 +17,11 @@ public class GlobalApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
 
+        initUM();
+
+    }
+
+    private void initUM() {
         //设置LOG开关，默认为false
         UMConfigure.setLogEnabled(true);
         /**
@@ -32,6 +37,5 @@ public class GlobalApplication extends BaseApplication {
          *如果您的应用使用了混淆， 请添加 -keep class com.umeng.commonsdk.** {*;}
          */
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
-
     }
 }
